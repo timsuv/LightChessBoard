@@ -2,7 +2,6 @@
 ///Timofey Suvorov, NET24
 ///
 
-
 namespace ChessBoard
 {
     internal class Program
@@ -96,10 +95,10 @@ namespace ChessBoard
                 string input = Console.ReadLine().ToUpper().Trim();
                 if (input.Length == 2 && char.IsLetter(input[0]) && char.IsDigit(input[1]))
                 {
-
+                    //convert the first char to a column and the int to the row
                     column = input[0] - 'A';
                     row = size - (input[1] - '0');
-
+                    //check if the coordinates are suitable for the size of the chessboard
                     if (column < size && row >= 0 && row < size)
                     {
                         validPosition = true;
@@ -108,7 +107,7 @@ namespace ChessBoard
                     }
                     else
                         Console.WriteLine("Placering är utanför shackbrädda, ange korrekt palcering");
-
+                    
                 }
                 else
                 {
