@@ -1,4 +1,7 @@
 ﻿using System.ComponentModel.Design;
+///Timofey Suvorov, NET24
+///
+
 
 namespace ChessBoard
 {
@@ -21,11 +24,11 @@ namespace ChessBoard
 
             //bool to check if the input is correct
             bool validSize = false;
-           //while loop that check for an int and not another value
+            //while loop that check for an int and not another value
             while (!validSize)
             {
                 string input = Console.ReadLine();
-                if (int.TryParse(input, out size) && size > 0 )
+                if (int.TryParse(input, out size) && size > 0)
                 {
                     validSize = true;
                 }
@@ -34,8 +37,8 @@ namespace ChessBoard
                     Console.WriteLine("Ange ett tal och inte nåt annat");
                 }
             }
-                
-        
+
+
             Console.WriteLine("Hur ska svarta rutor ser ut?");
             bool validBlackChar = false;
             while (!validBlackChar)
@@ -94,17 +97,18 @@ namespace ChessBoard
                 if (input.Length == 2 && char.IsLetter(input[0]) && char.IsDigit(input[1]))
                 {
 
-                     column = input[0] - 'A';
-                     row = size - (input[1] - '0');
+                    column = input[0] - 'A';
+                    row = size - (input[1] - '0');
 
                     if (column < size && row >= 0 && row < size)
                     {
                         validPosition = true;
+
                         position = input;
                     }
                     else
                         Console.WriteLine("Placering är utanför shackbrädda, ange korrekt palcering");
-                    
+
                 }
                 else
                 {
@@ -112,10 +116,10 @@ namespace ChessBoard
                 }
             }
 
-             
+
             //for loop to alternare between the whites and blacs
             for (int i = 0; i < size; i++)
-            { 
+            {
                 for (int j = 0; j < size; j++)
                 {
                     if (i == row && j == column)
@@ -141,8 +145,8 @@ namespace ChessBoard
                 }
                 Console.WriteLine();
             }
-
+        Console.ReadKey();
         }
     }
-    }
+}
 
